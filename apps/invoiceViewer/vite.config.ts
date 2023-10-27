@@ -21,7 +21,15 @@ export default async ({ mode }:{mode: any}): Promise<UserConfig> => {
     },
     plugins: [
       react(),
-      dynamicImport(),
+      dynamicImport({
+           // `node_modules` is exclude by default, so we need to include it explicitly
+          // https://github.com/vite-plugin/vite-plugin-dynamic-import/blob/v1.3.0/src/index.ts#L133-L135
+        // filter (id) {
+        //   if (id.includes('/node_modules/some-module')) {
+        //     return true
+        //   }
+        // }
+      }),
       basicSsl(),
       ...(isDebug
         ? [
@@ -29,9 +37,9 @@ export default async ({ mode }:{mode: any}): Promise<UserConfig> => {
         ]
         : [])
     ],
-    resolve: {
-      preserveSymlinks: true
-    },
+    // resolve: {
+    //   preserveSymlinks: true
+    // },
     server: { 
       https: true,
       port: 5151,

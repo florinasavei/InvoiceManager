@@ -1,6 +1,7 @@
-import React from "react"
+import styles from './style.module.scss'
+
 export const Button = () => {
   return (
-    <button >Click me!</button>
+    <button className={styles.Button}>Click me!</button>
   )
 }
