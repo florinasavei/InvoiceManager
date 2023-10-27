@@ -1,0 +1,19 @@
+{
+  "name": "invoice-manager",
+  "packageManager": "yarn@4.0.0-rc.53",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "install-yarn": "yarn install",
+    "clean:node_modules": "yarn cache clean && yarn dlx del-cli \"**/node_modules\" && echo done "
+  },
+  "volta": {
+    "node": "20.8.1",
+    "yarn": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.1"
+  }
+}
