@@ -37,10 +37,12 @@ export default async ({ mode }:{mode: any}): Promise<UserConfig> => {
         ]
         : [])
     ],
-    base: '/InvoiceManager/',
     server: { 
       https: true,
       port: 5151,
      },
+     build: {
+        assetsDir: 'InvoiceManager/assets',
+     }
   })
 }
