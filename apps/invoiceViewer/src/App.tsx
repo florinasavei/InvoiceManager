@@ -29,7 +29,10 @@ export const App = (): React.ReactElement => {
   return (
     <BrowserRouter>
       <div className={`${style.App} ${theme}-theme`}>
-        <ThemeSwitcher theme={theme} setTheme={setTheme} />
+        <div className={style.App__Header}>
+          <h1>Invoice Manager</h1>
+          <ThemeSwitcher theme={theme} setTheme={setTheme} />
+        </div>
 
         {/* TODO: implement navbar */}
         <Routes>
