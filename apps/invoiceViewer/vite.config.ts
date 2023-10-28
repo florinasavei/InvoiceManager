@@ -42,7 +42,7 @@ export default async ({ mode }:{mode: any}): Promise<UserConfig> => {
       port: 5151,
      },
      build: {
-        assetsDir: 'InvoiceManager/assets',
+        assetsDir: './assets',
      }
   })
 }
