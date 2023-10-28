@@ -37,9 +37,7 @@ export default async ({ mode }:{mode: any}): Promise<UserConfig> => {
         ]
         : [])
     ],
-    // resolve: {
-    //   preserveSymlinks: true
-    // },
+    base: '/InvoiceManager/',
     server: { 
       https: true,
       port: 5151,
