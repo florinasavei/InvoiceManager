@@ -1,4 +1,4 @@
-import { ThemeOptions } from "@invoice-manager/models"
+import { ThemeOptions } from "models"
 import { Moon, SunRise } from "../../icons"
 
 interface IThemeSwitcherProps {

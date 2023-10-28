@@ -1,5 +1,5 @@
 {
-  "name": "@invoice-manager/receivables",
+  "name": "receivables",
   "packageManager": "yarn@4.0.0-rc.42",
   "private": true,
   "version": "1.0.0",

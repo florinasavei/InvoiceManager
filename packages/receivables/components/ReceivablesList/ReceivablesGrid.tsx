@@ -1,5 +1,5 @@
-import { IReceivableDTO } from "@invoice-manager/models"
-import { MaterialDataGrid, MaterialDataGridCol } from "@invoice-manager/data-grid"
+import { IReceivableDTO } from "models"
+import { MaterialDataGrid, MaterialDataGridCol } from "data-grid"
 
 interface IReceivablesGridProps {
     receivables: IReceivableDTO[] | undefined

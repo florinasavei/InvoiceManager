@@ -15,11 +15,11 @@ jobs:
 
       - uses: volta-cli/action@v4
         with:
-          node-version: 20.8.1
+          node-version: 20.9.0
           yarn-version: 4.0.0
 
       - name: Use Node.js & YARN with Volta
-        run: volta install node@20.8.1 yarn@4.0.0   
+        run: volta install node@20.9.0 yarn@4.0.0   
 
       - name: Install dependencies
         run: yarn install --silent 2>&1
