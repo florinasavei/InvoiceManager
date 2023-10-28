@@ -1,4 +1,4 @@
-import { IReceivableDTO } from 'models'
+import { IReceivableDTO } from '@invoice-manager/models'
 import httpService from './http'
 
 const getAll = async():Promise<IReceivableDTO[]>=>{

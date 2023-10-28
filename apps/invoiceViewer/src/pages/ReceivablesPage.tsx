@@ -1,7 +1,7 @@
-import { IReceivableDTO } from "models";
+import { IReceivableDTO } from "@invoice-manager/models";
 import { useState, useEffect } from "react";
 import ReceivableService from '../services/receivables'
-import { ReceivablesGrid } from "receivables";
+import { ReceivablesGrid } from "@invoice-manager/receivables";
 
 
 export const ReceivablesPage = () => {

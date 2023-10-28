@@ -697,6 +697,88 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@invoice-manager/core@npm:^1.0.0, @invoice-manager/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@invoice-manager/core@workspace:packages/core"
+  dependencies:
+    "@types/react": "npm:^18.2.28"
+    "@types/react-dom": "npm:^18.2.13"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-icons: "npm:^4.11.0"
+  languageName: unknown
+  linkType: soft
+
+"@invoice-manager/data-grid@npm:1.0.0, @invoice-manager/data-grid@workspace:packages/data-grid":
+  version: 0.0.0-use.local
+  resolution: "@invoice-manager/data-grid@workspace:packages/data-grid"
+  dependencies:
+    "@emotion/react": "npm:^11.11.1"
+    "@emotion/styled": "npm:^11.11.0"
+    "@invoice-manager/core": "npm:^1.0.0"
+    "@mui/material": "npm:^5.14.15"
+    "@mui/system": "npm:^5.14.15"
+    "@mui/x-data-grid": "npm:^6.17.0"
+    "@types/react": "npm:^18.2.28"
+    "@types/react-dom": "npm:^18.2.13"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+  languageName: unknown
+  linkType: soft
+
+"@invoice-manager/invoice-viewer@workspace:apps/invoiceViewer":
+  version: 0.0.0-use.local
+  resolution: "@invoice-manager/invoice-viewer@workspace:apps/invoiceViewer"
+  dependencies:
+    "@invoice-manager/core": "npm:^1.0.0"
+    "@invoice-manager/models": "npm:^1.0.0"
+    "@invoice-manager/receivables": "npm:^1.0.0"
+    "@types/react": "npm:^18.2.15"
+    "@types/react-dom": "npm:^18.2.7"
+    "@typescript-eslint/eslint-plugin": "npm:^6.0.0"
+    "@typescript-eslint/parser": "npm:^6.0.0"
+    "@vitejs/plugin-basic-ssl": "npm:^1.0.1"
+    "@vitejs/plugin-react": "npm:^4.0.3"
+    axios: "npm:^1.6.0"
+    eslint: "npm:^8.45.0"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.3"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-router-dom: "npm:^6.17.0"
+    typescript: "npm:^5.0.2"
+    vite: "npm:^4.4.5"
+    vite-plugin-dynamic-import: "npm:1.5.0"
+    vite-plugin-mkcert: "npm:1.16.0"
+  peerDependencies:
+    react: ^17
+  languageName: unknown
+  linkType: soft
+
+"@invoice-manager/models@npm:1.0.0, @invoice-manager/models@npm:^1.0.0, @invoice-manager/models@workspace:packages/models":
+  version: 0.0.0-use.local
+  resolution: "@invoice-manager/models@workspace:packages/models"
+  dependencies:
+    "@types/react": "npm:^18.2.28"
+    "@types/react-dom": "npm:^18.2.13"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+  languageName: unknown
+  linkType: soft
+
+"@invoice-manager/receivables@npm:^1.0.0, @invoice-manager/receivables@workspace:packages/receivables":
+  version: 0.0.0-use.local
+  resolution: "@invoice-manager/receivables@workspace:packages/receivables"
+  dependencies:
+    "@invoice-manager/data-grid": "npm:1.0.0"
+    "@invoice-manager/models": "npm:1.0.0"
+    "@types/react": "npm:^18.2.28"
+    "@types/react-dom": "npm:^18.2.13"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+  languageName: unknown
+  linkType: soft
+
 "@jridgewell/gen-mapping@npm:^0.3.0, @jridgewell/gen-mapping@npm:^0.3.2":
   version: 0.3.3
   resolution: "@jridgewell/gen-mapping@npm:0.3.3"
@@ -1797,18 +1879,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core@npm:^1.0.0, core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "core@workspace:packages/core"
-  dependencies:
-    "@types/react": "npm:^18.2.28"
-    "@types/react-dom": "npm:^18.2.13"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-icons: "npm:^4.11.0"
-  languageName: unknown
-  linkType: soft
-
 "cosmiconfig@npm:^7.0.0":
   version: 7.1.0
   resolution: "cosmiconfig@npm:7.1.0"
@@ -1839,23 +1909,6 @@ __metadata:
   checksum: 32c038af259897c807ac738d9eab16b3d86747c72b09d5c740978e06f067f9b7b1737e1b75e407c7ab1fe1543dc95f20e202b4786aeb1b8d3bdf5d5ce655e6c6
   languageName: node
   linkType: hard
-
-"data-grid@workspace:packages/data-grid":
-  version: 0.0.0-use.local
-  resolution: "data-grid@workspace:packages/data-grid"
-  dependencies:
-    "@emotion/react": "npm:^11.11.1"
-    "@emotion/styled": "npm:^11.11.0"
-    "@mui/material": "npm:^5.14.15"
-    "@mui/system": "npm:^5.14.15"
-    "@mui/x-data-grid": "npm:^6.17.0"
-    "@types/react": "npm:^18.2.28"
-    "@types/react-dom": "npm:^18.2.13"
-    core: "npm:^1.0.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-  languageName: unknown
-  linkType: soft
 
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
@@ -2636,35 +2689,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"invoice-viewer@workspace:apps/invoiceViewer":
-  version: 0.0.0-use.local
-  resolution: "invoice-viewer@workspace:apps/invoiceViewer"
-  dependencies:
-    "@types/react": "npm:^18.2.15"
-    "@types/react-dom": "npm:^18.2.7"
-    "@typescript-eslint/eslint-plugin": "npm:^6.0.0"
-    "@typescript-eslint/parser": "npm:^6.0.0"
-    "@vitejs/plugin-basic-ssl": "npm:^1.0.1"
-    "@vitejs/plugin-react": "npm:^4.0.3"
-    axios: "npm:^1.6.0"
-    core: "npm:^1.0.0"
-    eslint: "npm:^8.45.0"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.3"
-    models: "npm:^1.0.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-router-dom: "npm:^6.17.0"
-    receivables: "npm:^1.0.0"
-    typescript: "npm:^5.0.2"
-    vite: "npm:^4.4.5"
-    vite-plugin-dynamic-import: "npm:1.5.0"
-    vite-plugin-mkcert: "npm:1.16.0"
-  peerDependencies:
-    react: ^17
-  languageName: unknown
-  linkType: soft
-
 "ip@npm:^2.0.0":
   version: 2.0.0
   resolution: "ip@npm:2.0.0"
@@ -3066,17 +3090,6 @@ __metadata:
   checksum: 46ea0f3ffa8bc6a5bc0c7081ffc3907777f0ed6516888d40a518c5111f8366d97d2678911ad1a6882bf592fa9de6c784fea32e1687bb94e1f4944170af48a5cf
   languageName: node
   linkType: hard
-
-"models@npm:^1.0.0, models@workspace:packages/models":
-  version: 0.0.0-use.local
-  resolution: "models@workspace:packages/models"
-  dependencies:
-    "@types/react": "npm:^18.2.28"
-    "@types/react-dom": "npm:^18.2.13"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-  languageName: unknown
-  linkType: soft
 
 "ms@npm:2.1.2":
   version: 2.1.2
@@ -3490,17 +3503,6 @@ __metadata:
   checksum: 6fa848cf63d1b82ab4e985f4cf72bd55b7dcfd8e0a376905804e48c3634b7e749170940ba77b32804d5fe93b3cc521aa95a8d7e7d725f830da6d93f3669ce66b
   languageName: node
   linkType: hard
-
-"receivables@npm:^1.0.0, receivables@workspace:packages/receivables":
-  version: 0.0.0-use.local
-  resolution: "receivables@workspace:packages/receivables"
-  dependencies:
-    "@types/react": "npm:^18.2.28"
-    "@types/react-dom": "npm:^18.2.13"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-  languageName: unknown
-  linkType: soft
 
 "regenerator-runtime@npm:^0.14.0":
   version: 0.14.0

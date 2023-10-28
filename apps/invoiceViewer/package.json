@@ -1,5 +1,5 @@
 {
-  "name": "invoice-viewer",
+  "name": "@invoice-manager/invoice-viewer",
   "packageManager": "yarn@4.0.0-rc.42",
   "private": true,
   "version": "1.0.0",
@@ -10,13 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@invoice-manager/core": "^1.0.0",
+    "@invoice-manager/models": "^1.0.0",
+    "@invoice-manager/receivables": "^1.0.0",
     "axios": "^1.6.0",
-    "core": "^1.0.0",
-    "models": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.17.0",
-    "receivables": "^1.0.0"
+    "react-router-dom": "^6.17.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

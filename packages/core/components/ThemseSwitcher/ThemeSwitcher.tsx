@@ -1,4 +1,4 @@
-import { ThemeOptions } from "models"
+import { ThemeOptions } from "@invoice-manager/models"
 import { Moon, SunRise } from "../../icons"
 
 interface IThemeSwitcherProps {
@@ -9,12 +9,17 @@ interface IThemeSwitcherProps {
 export const ThemeSwitcher = ({ theme, setTheme }: IThemeSwitcherProps): React.ReactElement => {
     return (
         <div>
-            <button onClick={() => { setTheme('light') }}>
-                <SunRise />
-            </button>
-            <button onClick={() => { setTheme('dark') }}>
-                <Moon />
-            </button>
+            {theme === "dark" &&
+                <button onClick={() => { setTheme('light') }}>
+                    <SunRise />
+                </button>
+            }
+            {theme === "light" &&
+
+                <button onClick={() => { setTheme('dark') }}>
+                    <Moon />
+                </button>
+            }
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { ThemeOptions } from 'models';
-import { ThemeSwitcher } from 'core';
+import { ThemeOptions } from '@invoice-manager/models';
+import { ThemeSwitcher } from '@invoice-manager/core';
 
 import style from './style.module.scss'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';

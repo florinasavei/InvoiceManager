@@ -2,6 +2,6 @@ import { RxMoon } from "react-icons/rx";
 
 export const Moon = () => {
     return (
-        <RxMoon />
+        <RxMoon size="2rem"/>
     )
 }
