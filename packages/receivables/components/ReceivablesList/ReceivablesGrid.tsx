@@ -1,3 +1,4 @@
+import { useEffect, useLayoutEffect, useState } from "react"
 import { IReceivableDTO } from "@invoice-manager/models"
 import {
     DataGridRowParams,
@@ -18,8 +19,32 @@ interface IReceivablesGridProps {
     receivables: IReceivableDTO[] | undefined
 }
 
+// TODO: move to core
+function useWindowSize() {
+    const [size, setSize] = useState([0, 0]);
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize([window.innerWidth, window.innerHeight]);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => {
+             window.removeEventListener('resize', updateSize)
+        };
+    }, []);
+    return size;
+}
 
 export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.ReactElement => {
+
+    const [width] = useWindowSize();
+
+    const [isSmallScreen, setIsSmallScreen] = useState<boolean>(width < 1200);
+
+
+    useEffect(() => {
+        setIsSmallScreen(width < 1200)
+    }, [width])
 
     const getRowStyle = (params: DataGridRowParams<IReceivableDTO>) => {
         if (params.row.Cancelled === true) {
@@ -87,15 +112,16 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
         },
     ]
 
-    const visibleColumns : DataGridVisibleColumns ={
-        ComputedDeptPercentage: window.innerWidth < 800,
-        ClosedDate: window.innerWidth < 800,
-        IssueDate: window.innerWidth < 800,
-        Cancelled: window.innerWidth < 800,
+    const visibleColumns: DataGridVisibleColumns = {
+        ComputedDeptPercentage: !isSmallScreen,
+        ClosedDate: !isSmallScreen,
+        IssueDate: !isSmallScreen,
+        Cancelled: !isSmallScreen,
     }
 
     return (
-        <>
+        <div>
+            {isSmallScreen && <p>Some of the columns are hidden</p>}
             {receivables &&
                 <MaterialDataGrid
                     columns={columns}
@@ -103,7 +129,8 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
                     rowIdField='Id'
                     getRowStyle={getRowStyle}
                     columnVisibility={visibleColumns}
+                    key={width}
                 />}
-        </>
+        </div>
     )
 }

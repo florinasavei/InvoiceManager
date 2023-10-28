@@ -4,6 +4,7 @@ import {
 import { StyledEngineProvider } from '@mui/material'
 
 import styles from './style.module.scss'
+import { DataGridVisibleColumns } from './helpers'
 
 
 interface IMaterialDataGridProps {
@@ -11,18 +12,26 @@ interface IMaterialDataGridProps {
   rows: any[]
   rowIdField: string
   getRowStyle: (row: GridRowParams) => string
-  columnVisibility?: Record<GridColDef['field'], boolean>
+  columnVisibility?: DataGridVisibleColumns
+  key?: any // key forces re-render
 }
 const pageSizeOptions = [15, 25, 50, 100];
 
+export const MaterialDataGrid = ({ columns,
+  rows,
+  rowIdField,
+  getRowStyle,
+  columnVisibility,
+  key = "MaterialDataGrid"
+}: IMaterialDataGridProps): React.ReactElement => {
 
-export const MaterialDataGrid = ({ columns, rows, rowIdField, getRowStyle, columnVisibility }: IMaterialDataGridProps): React.ReactElement => {
   return (
     <StyledEngineProvider injectFirst>
       <div
         className={styles.DataGridContainer}
       >
         <DataGrid
+          key={key}
           columns={columns}
           density='standard'
           rowHeight={44}
