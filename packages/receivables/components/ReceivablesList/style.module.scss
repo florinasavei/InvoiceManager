@@ -1,0 +1,8 @@
+.ReceivablesGrid{
+    &__Row{
+        &--canceled{
+           color: var(--color-error);
+           font-weight: 600;
+        }
+    }
+}

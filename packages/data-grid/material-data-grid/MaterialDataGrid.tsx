@@ -1,20 +1,22 @@
 import {
-  DataGrid, GridColDef,
+  DataGrid, GridColDef, GridRowParams,
 } from '@mui/x-data-grid'
+import { StyledEngineProvider } from '@mui/material'
 
 import styles from './style.module.scss'
-import { StyledEngineProvider } from '@mui/material'
 
 
 interface IMaterialDataGridProps {
   columns: GridColDef[]
   rows: any[]
   rowIdField: string
+  getRowStyle: (row: GridRowParams) => string
+  columnVisibility?: Record<GridColDef['field'], boolean>
 }
 const pageSizeOptions = [15, 25, 50, 100];
 
 
-export const MaterialDataGrid = ({ columns, rows, rowIdField }: IMaterialDataGridProps): React.ReactElement => {
+export const MaterialDataGrid = ({ columns, rows, rowIdField, getRowStyle, columnVisibility }: IMaterialDataGridProps): React.ReactElement => {
   return (
     <StyledEngineProvider injectFirst>
       <div
@@ -30,8 +32,12 @@ export const MaterialDataGrid = ({ columns, rows, rowIdField }: IMaterialDataGri
           disableRowSelectionOnClick
           initialState={{
             pagination: { paginationModel: { pageSize: pageSizeOptions[0] } },
+            columns: {
+              columnVisibilityModel: columnVisibility,
+            },
+          }} pageSizeOptions={pageSizeOptions}
+          getRowClassName={getRowStyle}
 
-          }} pageSizeOptions={pageSizeOptions} // Specify the available page size options
         />
       </div>
     </StyledEngineProvider>

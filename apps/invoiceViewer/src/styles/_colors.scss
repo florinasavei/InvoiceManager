@@ -7,6 +7,7 @@
     ::placeholder {
       --background-color: white;
       --foreground-color: black;
+      --color-error: red;
     }
   }
 
@@ -18,6 +19,7 @@
     ::placeholder {
       --background-color: black;
       --foreground-color: white;
+      --color-error: red;
     }
   }
 }

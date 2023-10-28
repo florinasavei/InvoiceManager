@@ -5,7 +5,8 @@ Invoice management system
 
 Working with YARN workspaces:
 
-`yarn workspace invoice-viewer add axios`
+- adding an external package in a particular workspace(package):
+`yarn workspace @invoice-manager/core add react-intl`
 
 
 The site is deployed to two environments:
