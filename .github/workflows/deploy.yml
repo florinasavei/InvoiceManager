@@ -28,7 +28,10 @@ jobs:
         run: yarn run build:invoiceViewer
 
       - name: Copy files from apps/invoiceViewer/dist to current directory
-        run: cp -r apps/invoiceViewer/dist/* ./  
+        run: cp -r apps/invoiceViewer/dist/* ./
+
+      - name: Copy files from apps/invoiceViewer/public to current directory
+        run: cp -r apps/invoiceViewer/public/* ./public 
 
       - name: Deploy invoiceViewer to GitHub Pages (PROD)
         run: |
