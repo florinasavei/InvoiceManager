@@ -28,14 +28,14 @@ jobs:
         run: yarn run build:invoiceViewer
 
       - name: Copy files from apps/invoiceViewer/dist to current directory
-        run: cp -r apps/invoiceViewer/dist/* ./docs  
+        run: cp -r apps/invoiceViewer/dist/* ./  
 
       - name: Deploy invoiceViewer to GitHub Pages (PROD)
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
           git checkout -b prod
-          git add -f docs
+          git add ./
           git commit -m "Deploy to prod"
           git push -f origin prod
         env:
