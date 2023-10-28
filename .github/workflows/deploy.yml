@@ -11,20 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Setup Volta
-        run: curl https://get.volta.sh | bash -s -- --skip-setup
-
-      - name: Set Volta Environment Variables
-        run: |
-          export VOLTA_HOME="$HOME/.volta"
-          export PATH="$VOLTA_HOME/bin:$PATH"  
-
-      - name: Setup Node.js and Yarn with Volta
-        run: volta install node@20 yarn
-        env:
-          VOLTA_HOME: /home/runner/.volta
+      - uses: volta-cli/action@v4
+        with:
+          node-version: 20.8.1
+          yarn-version: 4.0.0
 
       - name: Install dependencies
         run: yarn install
