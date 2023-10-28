@@ -22,9 +22,9 @@ export const ReceivablesPage = () => {
     }, [])
 
     return (
-        <>
-        <h2>Receivables</h2>
+        <div>
+            <h2>Receivables</h2>
             <ReceivablesGrid receivables={receivables} />
-        </>
+        </div>
     )
 }
