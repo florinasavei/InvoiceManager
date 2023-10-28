@@ -29,7 +29,7 @@ function useWindowSize() {
         window.addEventListener('resize', updateSize);
         updateSize();
         return () => {
-             window.removeEventListener('resize', updateSize)
+            window.removeEventListener('resize', updateSize)
         };
     }, []);
     return size;
@@ -39,11 +39,11 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
 
     const [width] = useWindowSize();
 
-    const [isSmallScreen, setIsSmallScreen] = useState<boolean>(width < 1200);
+    const [smallView, setSmallView] = useState<boolean>(width < 1200);
 
 
     useEffect(() => {
-        setIsSmallScreen(width < 1200)
+        setSmallView(width < 1200)
     }, [width])
 
     const getRowStyle = (params: DataGridRowParams<IReceivableDTO>) => {
@@ -112,16 +112,24 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
         },
     ]
 
-    const visibleColumns: DataGridVisibleColumns = {
-        ComputedDeptPercentage: !isSmallScreen,
-        ClosedDate: !isSmallScreen,
-        IssueDate: !isSmallScreen,
-        Cancelled: !isSmallScreen,
+    let visibleColumns: DataGridVisibleColumns = {
+        ComputedDeptPercentage: !smallView,
+        ClosedDate: !smallView,
+        IssueDate: !smallView,
+        Cancelled: !smallView,
     }
 
     return (
         <div>
-            {isSmallScreen && <p>Some of the columns are hidden</p>}
+            {/* TODO: add toggle component */}
+            {smallView && <p onClick={() => {
+                setSmallView(false)
+                console.log("clicked")
+            }}>Some of the columns are hidden</p>}
+            {!smallView && <p onClick={() => {
+                setSmallView(true)
+                console.log("clicked")
+            }}>Narrow view</p>}
             {receivables &&
                 <MaterialDataGrid
                     columns={columns}
@@ -129,7 +137,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
                     rowIdField='Id'
                     getRowStyle={getRowStyle}
                     columnVisibility={visibleColumns}
-                    key={width}
+                    gridId={`Receivables-${smallView ? 'narrow' : 'wide'}`}
                 />}
         </div>
     )

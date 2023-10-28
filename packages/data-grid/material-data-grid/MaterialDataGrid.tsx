@@ -13,7 +13,7 @@ interface IMaterialDataGridProps {
   rowIdField: string
   getRowStyle: (row: GridRowParams) => string
   columnVisibility?: DataGridVisibleColumns
-  key?: any // key forces re-render
+  gridId?: any // key forces re-render
 }
 const pageSizeOptions = [15, 25, 50, 100];
 
@@ -22,8 +22,10 @@ export const MaterialDataGrid = ({ columns,
   rowIdField,
   getRowStyle,
   columnVisibility,
-  key = "MaterialDataGrid"
+  gridId
 }: IMaterialDataGridProps): React.ReactElement => {
+
+  console.log("gridKey", gridId)
 
   return (
     <StyledEngineProvider injectFirst>
@@ -31,7 +33,7 @@ export const MaterialDataGrid = ({ columns,
         className={styles.DataGridContainer}
       >
         <DataGrid
-          key={key}
+          key={gridId}
           columns={columns}
           density='standard'
           rowHeight={44}
