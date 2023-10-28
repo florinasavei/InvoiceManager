@@ -6,8 +6,8 @@
     "apps/*"
   ],
   "scripts": {
-    "install-yarn": "yarn install",
-    "clean:node_modules": "yarn cache clean && yarn dlx del-cli \"**/node_modules\" && echo done "
+    "clean:node_modules": "yarn cache clean && yarn dlx del-cli \"**/node_modules\" && echo done ",
+    "build:invoiceViewer": "cd apps/invoiceViewer && yarn run build"
   },
   "volta": {
     "node": "20.8.1",
