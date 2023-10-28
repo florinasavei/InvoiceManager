@@ -5,4 +5,4 @@ Invoice management system
 
 Working with YARN workspaces:
 
-`yarn workspace @invoiceManager/invoiceViewer add @types/node`
+`yarn workspace invoice-viewer add axios`

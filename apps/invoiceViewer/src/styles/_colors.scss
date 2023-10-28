@@ -1,0 +1,23 @@
+@mixin appColors {
+  .light-theme {
+    &,
+    :root,
+    ::before,
+    ::after,
+    ::placeholder {
+      --background-color: white;
+      --foreground-color: black;
+    }
+  }
+
+  .dark-theme {
+    &,
+    :root,
+    ::before,
+    ::after,
+    ::placeholder {
+      --background-color: black;
+      --foreground-color: white;
+    }
+  }
+}

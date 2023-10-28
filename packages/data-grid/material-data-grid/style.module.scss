@@ -1,0 +1,17 @@
+.DataGridContainer {
+  height: 100%;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.DataGrid {
+  border: 0;
+  color: var(--foreground-color);
+  & :global {
+    .MuiTablePagination-root {
+        color: var(--foreground-color);
+    }
+  }
+}

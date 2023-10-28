@@ -1,0 +1,8 @@
+.App {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
