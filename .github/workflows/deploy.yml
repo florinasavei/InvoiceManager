@@ -18,8 +18,8 @@ jobs:
           node-version: 20.8.1
           yarn-version: 4.0.0
 
-      - name: Use Node.js with Volta
-        run: volta use node@20.8.1    
+      - name: Use Node.js & YARN with Volta
+        run: volta install    
 
       - name: Install dependencies
         run: yarn install
