@@ -6,7 +6,7 @@ import { ReceivablesGrid } from "receivables";
 
 export const ReceivablesPage = () => {
 
-    const [receivables, setReceivables] = useState<IReceivableDTO[]>([])
+    const [receivables, setReceivables] = useState<IReceivableDTO[] | undefined>(undefined)
 
     useEffect(() => {
         async function fetchData() {
