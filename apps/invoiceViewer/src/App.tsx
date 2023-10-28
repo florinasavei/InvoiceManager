@@ -33,8 +33,8 @@ export const App = (): React.ReactElement => {
 
         {/* TODO: implement navbar */}
         <Routes>
-          <Route path="/" element={<Navigate to="/receivables" replace />} />
-          <Route path="/receivables" element={<ReceivablesPage />} />
+          <Route path="*" element={<Navigate to="/receivables" replace />} />
+          <Route path="receivables" element={<ReceivablesPage />} />
         </Routes>
       </div>
     </BrowserRouter>
