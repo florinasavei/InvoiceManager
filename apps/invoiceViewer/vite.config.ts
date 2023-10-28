@@ -37,6 +37,7 @@ export default async ({ mode }:{mode: any}): Promise<UserConfig> => {
         ]
         : [])
     ],
+    base: './', //allows relative paths
     server: { 
       https: true,
       port: 5151,
