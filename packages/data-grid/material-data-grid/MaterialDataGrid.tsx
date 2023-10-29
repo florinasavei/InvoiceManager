@@ -25,8 +25,6 @@ export const MaterialDataGrid = ({ columns,
   gridId
 }: IMaterialDataGridProps): React.ReactElement => {
 
-  console.log("gridKey", gridId)
-
   return (
     <StyledEngineProvider injectFirst>
       <div

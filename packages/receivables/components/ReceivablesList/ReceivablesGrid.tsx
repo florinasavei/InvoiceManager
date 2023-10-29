@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { IReceivableDTO } from "@invoice-manager/models"
 import {
     DataGridRowParams,
@@ -11,38 +11,21 @@ import {
     BooleanIndicator,
     FormattedCurrency,
     WidthToggler,
-    calculateRemainingPercentage
+    calculateRemainingPercentage,
+    formatISODate,
+    useWindowSize
 } from "@invoice-manager/core"
 
 import styles from './style.module.scss'
-
 
 interface IReceivablesGridProps {
     receivables: IReceivableDTO[] | undefined
 }
 
-// TODO: move to core
-function useWindowSize() {
-    const [size, setSize] = useState([0, 0]);
-    useLayoutEffect(() => {
-        function updateSize() {
-            setSize([window.innerWidth, window.innerHeight]);
-        }
-        window.addEventListener('resize', updateSize);
-        updateSize();
-        return () => {
-            window.removeEventListener('resize', updateSize)
-        };
-    }, []);
-    return size;
-}
-
 export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.ReactElement => {
 
     const [width] = useWindowSize();
-
     const [isSmallView, setIsSmallView] = useState<boolean>(width < 1200);
-
 
     useEffect(() => {
         setIsSmallView(width < 1200)
@@ -91,19 +74,25 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'IssueDate',
             headerName: "Issue Date",
             sortable: true,
-            flex: 1
+            flex: 1,
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
+                formatISODate(data.row.IssueDate.toString())
         },
         {
             field: 'DueDate',
             headerName: "Due Date",
             sortable: true,
-            flex: 1
+            flex: 1,
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
+                formatISODate(data.row.IssueDate.toString())
         },
         {
             field: 'ClosedDate',
             headerName: "Closed Date",
             sortable: true,
             flex: 1,
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
+                formatISODate(data.row.IssueDate.toString())
         },
         {
             field: 'Cancelled',
