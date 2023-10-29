@@ -7,8 +7,7 @@
     "dev": "yarn dlx kill-port 5151 && vite --port 5151",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "test": "yarn workspaces foreach -A run test"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@invoice-manager/core": "^1.0.0",

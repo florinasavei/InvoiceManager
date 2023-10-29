@@ -28,7 +28,7 @@ jobs:
         run: yarn run build:invoiceViewer
 
       - name: Run unit tests
-        run: yarn run test
+        run: yarn run test:unit
         
       - name: Copy files from apps/invoiceViewer/dist to current directory
         run: cp -r apps/invoiceViewer/dist/* ./
