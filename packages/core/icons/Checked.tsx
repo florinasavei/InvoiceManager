@@ -1,8 +1,15 @@
 import { RxCheck } from "react-icons/rx";
 import styles from './style.module.scss'
 
-export const Checked = () => {
+interface ICheckedProps {
+    title?: string
+}
+export const Checked = ({ title }: ICheckedProps) => {
     return (
-        <RxCheck size="2rem" className={styles.Icon} color="green"/>
+        <RxCheck size="2rem"
+            className={styles.Icon}
+            color="green"
+            title={title}
+        />
     )
 }

@@ -8,9 +8,9 @@ export const BooleanIndicator = ({ value }: IBooleanIndicatorProps): React.React
     return (
         <>
             {value ?
-                <Checked />
+                <Checked title="true"/>
                 :
-                <Cross />
+                <Cross title="false"/>
             }
         </ >
     )

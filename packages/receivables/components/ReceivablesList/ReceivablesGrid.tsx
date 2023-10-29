@@ -84,7 +84,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             sortable: true,
             flex: 4,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                formatISODate(data.row.IssueDate.toString())
+                formatISODate(data.row.DueDate.toString())
         },
         {
             field: 'ClosedDate',
@@ -92,7 +92,9 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             sortable: true,
             flex: 4,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                formatISODate(data.row.IssueDate.toString())
+                data.row.ClosedDate !== null
+                    ? formatISODate(data.row.ClosedDate.toString())
+                    : "-"
         },
         {
             field: 'Cancelled',
