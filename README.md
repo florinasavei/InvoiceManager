@@ -8,9 +8,16 @@ Working with YARN workspaces:
 - adding an external package in a particular workspace(package):
 `yarn workspace @invoice-manager/core add react-intl`
 
+# Development setup
+
+- dependencies: node@20.9.0 yarn@4.0.0
+
+* this project also supports [Volta](https://docs.volta.sh/guide/getting-started)
+    - install volta
+    - run `volta install node@20.9.0 yarn@4.0.0``
 
 The site is deployed to two environments:
 
-- [Netlify](https://invoice-manager-florin-asavei.netlify.app)
+- [PROD](https://invoice-manager-florin-asavei.netlify.app)
 
-- [GithubPages](https://invoice-manager.stackfull.win)
+- [QA](https://qa-invoice-manager-florin-asavei.netlify.app)
