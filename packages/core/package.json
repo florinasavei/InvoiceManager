@@ -25,6 +25,6 @@
     "jest-environment-jsdom": "^29.7.0"
   },
   "scripts": {
-   "test": "yarn jest"
+    "test": "yarn jest"
   }
 }
