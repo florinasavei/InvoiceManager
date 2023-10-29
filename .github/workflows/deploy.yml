@@ -47,6 +47,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+          # TODO: add playwright tests on QA env
+
       - name: Deploy invoiceViewer to PROD
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
