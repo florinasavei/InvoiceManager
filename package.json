@@ -18,7 +18,9 @@
     "npm": "10.2.1"
   },
   "devDependencies": {
+    "@types/kill-port": "^2",
     "@types/node": "^20.8.9",
+    "kill-port": "^2.0.1",
     "sass": "^1.69.5"
   }
 }
