@@ -49,8 +49,7 @@ jobs:
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
           git checkout -b prod
-          git add ./
-          git commit -m "Deploy to prod"
+          git cherry-pick qa
           git push -f origin prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

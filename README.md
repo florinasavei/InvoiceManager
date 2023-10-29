@@ -15,6 +15,7 @@ Working with YARN workspaces:
 * this project also supports [Volta](https://docs.volta.sh/guide/getting-started)
     - install volta
     - run `volta install node@20.9.0 yarn@4.0.0``
+       - when using Volta, it is remanded to run VS Code as admin
 
 The site is deployed to two environments:
 
