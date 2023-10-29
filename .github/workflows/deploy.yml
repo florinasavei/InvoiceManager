@@ -51,7 +51,7 @@ jobs:
           git checkout -b prod
           git reset --hard
           git cherry-pick qa -Xtheirs --allow-empty
-          git cherry-pick --continue --allow-empty
+          git commit --allow-empty
           git push -f origin prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
