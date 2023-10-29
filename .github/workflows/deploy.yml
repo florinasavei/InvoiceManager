@@ -33,7 +33,7 @@ jobs:
       - name: Copy files from apps/invoiceViewer/public to current directory
         run: cp -r apps/invoiceViewer/public/* ./ 
 
-      - name: Deploy invoiceViewer to GitHub Pages (QA)
+      - name: Deploy invoiceViewer to QA
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
@@ -44,12 +44,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy invoiceViewer to GitHub Pages (PROD)
+      - name: Deploy invoiceViewer to PROD
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
           git checkout -b prod
-          git cherry-pick --abort
           git reset --hard
           git cherry-pick qa
           git cherry-pick --continue -Xtheirs --allow-empty
