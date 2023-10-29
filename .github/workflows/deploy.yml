@@ -44,11 +44,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy invoiceViewer to GitHub Pages (DEV)
+      - name: Deploy invoiceViewer to GitHub Pages (PROD)
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
           git checkout -b prod
+          git cherry-pick --abort
+          git reset --hard
           git cherry-pick qa
           git cherry-pick --continue -Xtheirs --allow-empty
           git push -f origin prod
