@@ -8,6 +8,10 @@
       --background-color: white;
       --foreground-color: black;
       --color-error: red;
+      --color-background-primary: #007bff;
+      --color-foreground-primary: white;
+      --color-background-secondary: #6c757d;
+      --color-foreground-secondary: white;
     }
   }
 
@@ -20,6 +24,10 @@
       --background-color: black;
       --foreground-color: white;
       --color-error: red;
+      --color-background-primary: #007bff;
+      --color-foreground-primary: black;
+      --color-background-secondary: #6c757d;
+      --color-foreground-secondary: black;
     }
   }
 }

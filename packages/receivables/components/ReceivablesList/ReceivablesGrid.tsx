@@ -8,7 +8,9 @@ import {
     MaterialDataGridCol
 } from "@invoice-manager/data-grid"
 import {
+    BooleanIndicator,
     FormattedCurrency,
+    WidthToggler,
     calculateRemainingPercentage
 } from "@invoice-manager/core"
 
@@ -39,11 +41,11 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
 
     const [width] = useWindowSize();
 
-    const [smallView, setSmallView] = useState<boolean>(width < 1200);
+    const [isSmallView, setIsSmallView] = useState<boolean>(width < 1200);
 
 
     useEffect(() => {
-        setSmallView(width < 1200)
+        setIsSmallView(width < 1200)
     }, [width])
 
     const getRowStyle = (params: DataGridRowParams<IReceivableDTO>) => {
@@ -109,27 +111,21 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             sortable: true,
             flex: 1,
             valueGetter: (params: DataGridRowParams<IReceivableDTO>) => !params.row.Cancelled,
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
+                <BooleanIndicator value={!data.row.Cancelled} />
         },
     ]
 
     let visibleColumns: DataGridVisibleColumns = {
-        ComputedDeptPercentage: !smallView,
-        ClosedDate: !smallView,
-        IssueDate: !smallView,
-        Cancelled: !smallView,
+        ComputedDeptPercentage: !isSmallView,
+        ClosedDate: !isSmallView,
+        IssueDate: !isSmallView,
+        Cancelled: !isSmallView,
     }
 
     return (
         <div>
-            {/* TODO: add toggle component */}
-            {smallView && <p onClick={() => {
-                setSmallView(false)
-                console.log("clicked")
-            }}>Some of the columns are hidden</p>}
-            {!smallView && <p onClick={() => {
-                setSmallView(true)
-                console.log("clicked")
-            }}>Narrow view</p>}
+            <WidthToggler isExpanded={!isSmallView} toggleExpand={(expanded) => { setIsSmallView(!expanded) }} />
             {receivables &&
                 <MaterialDataGrid
                     columns={columns}
@@ -137,7 +133,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
                     rowIdField='Id'
                     getRowStyle={getRowStyle}
                     columnVisibility={visibleColumns}
-                    gridId={`Receivables-${smallView ? 'narrow' : 'wide'}`}
+                    gridId={`Receivables-${isSmallView ? 'narrow' : 'wide'}`}
                 />}
         </div>
     )

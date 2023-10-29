@@ -11,7 +11,7 @@
   "scripts": {
     "clean:node_modules": "yarn cache clean && yarn dlx del-cli \"**/node_modules\" && echo done ",
     "build:invoiceViewer": "cd apps/invoiceViewer && yarn run build",
-    "test:unit": "yarn workspaces foreach -A run test:unit"    
+    "test:unit": "yarn workspaces foreach -A run test:unit"
   },
   "volta": {
     "node": "20.9.0",

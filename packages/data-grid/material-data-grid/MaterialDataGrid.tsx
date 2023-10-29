@@ -15,7 +15,7 @@ interface IMaterialDataGridProps {
   columnVisibility?: DataGridVisibleColumns
   gridId?: any // key forces re-render
 }
-const pageSizeOptions = [15, 25, 50, 100];
+const pageSizeOptions = [10, 20, 50, 100];
 
 export const MaterialDataGrid = ({ columns,
   rows,
