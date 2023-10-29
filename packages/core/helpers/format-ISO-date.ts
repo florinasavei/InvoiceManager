@@ -1,4 +1,7 @@
-export const formatISODate = (isoDate: string): string => {
+export const formatISODate = (
+  isoDate: string,
+  customTimeZone: string | undefined = undefined
+): string => {
   const date = new Date(isoDate);
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -7,7 +10,8 @@ export const formatISODate = (isoDate: string): string => {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
-    timeZoneName: "short",
+    timeZoneName: 'shortGeneric',
+    timeZone: customTimeZone ?? 'UTC'
   };
-  return date.toLocaleDateString(undefined, options);
+  return date.toLocaleDateString("en-US", options);
 };
