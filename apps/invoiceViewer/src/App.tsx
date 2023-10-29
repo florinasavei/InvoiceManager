@@ -39,6 +39,7 @@ export const App = (): React.ReactElement => {
           <Route path="*" element={<Navigate to="/receivables" replace />} />
           <Route path="receivables" element={<ReceivablesPage />} />
         </Routes>
+        <p>v 1.0.0</p>
       </div>
     </BrowserRouter>
 

@@ -33,7 +33,18 @@ jobs:
       - name: Copy files from apps/invoiceViewer/public to current directory
         run: cp -r apps/invoiceViewer/public/* ./ 
 
-      - name: Deploy invoiceViewer to GitHub Pages (PROD)
+      - name: Deploy invoiceViewer to GitHub Pages (QA)
+        run: |
+          git config --global user.email "asaveiflorin@gmail.com"
+          git config --global user.name "Florin Asavei"
+          git checkout -b qa
+          git add ./
+          git commit -m "Deploy to qa"
+          git push -f origin qa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy invoiceViewer to GitHub Pages (DEV)
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
@@ -43,3 +54,4 @@ jobs:
           git push -f origin prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
