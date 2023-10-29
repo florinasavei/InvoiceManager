@@ -50,16 +50,26 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             headerName: "Opening Value",
             sortable: true,
             flex: 3,
-            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                <FormattedCurrency value={data.row.OpeningValue} currencyCode={data.row.CurrencyCode} />
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) => {
+                const value = data.row.OpeningValue;
+                const currencyCode = data.row.CurrencyCode;
+                return <div title={`${currencyCode} ${value}`} className={styles['ReceivablesGrid__Cell--ellipsis']}>
+                    <FormattedCurrency value={value} currencyCode={currencyCode} />
+                </div>
+            }
         },
         {
             field: 'RemainingBalance',
             headerName: "Remaining Balance",
             sortable: true,
             flex: 3,
-            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                <FormattedCurrency value={data.row.RemainingBalance} currencyCode={data.row.CurrencyCode} />
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) => {
+                const value = data.row.RemainingBalance;
+                const currencyCode = data.row.CurrencyCode;
+                return <div title={`${currencyCode} ${value}`} className={styles['ReceivablesGrid__Cell--ellipsis']}>
+                    <FormattedCurrency value={value} currencyCode={currencyCode} />
+                </div>
+            }
         },
         {
             field: 'ComputedDeptPercentage',
@@ -75,26 +85,39 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             headerName: "Issue Date",
             sortable: true,
             flex: 4,
-            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                formatISODate(data.row.IssueDate.toString())
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) => {
+                const value = formatISODate(data.row.IssueDate.toString());
+                return <div title={value} className={styles['ReceivablesGrid__Cell--ellipsis']}>
+                    {value}
+                </div>
+            }
         },
         {
             field: 'DueDate',
             headerName: "Due Date",
             sortable: true,
             flex: 4,
-            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                formatISODate(data.row.DueDate.toString())
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) => {
+                const value = formatISODate(data.row.DueDate.toString());
+                return <div title={value} className={styles['ReceivablesGrid__Cell--ellipsis']}>
+                    {value}
+                </div>
+            }
         },
         {
             field: 'ClosedDate',
             headerName: "Closed Date",
             sortable: true,
             flex: 4,
-            renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
-                data.row.ClosedDate !== null
-                    ? formatISODate(data.row.ClosedDate.toString())
-                    : "-"
+            renderCell: (data: DataGridRowParams<IReceivableDTO>) => {
+                if (data.row.ClosedDate === null) {
+                    return '-';
+                }
+                const value = formatISODate(data.row.ClosedDate.toString());
+                return <div title={value} className={styles['ReceivablesGrid__Cell--ellipsis']}>
+                    {value}
+                </div>
+            }
         },
         {
             field: 'Cancelled',

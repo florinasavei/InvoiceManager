@@ -1,8 +1,15 @@
-.ReceivablesGrid{
-    &__Row{
-        &--canceled{
-           color: var(--color-error);
-           font-weight: 600;
+.ReceivablesGrid {
+    &__Row {
+        &--canceled {
+            color: var(--color-error);
+            font-weight: 600;
+        }
+    }
+    &__Cell {
+        &--ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     }
 }
