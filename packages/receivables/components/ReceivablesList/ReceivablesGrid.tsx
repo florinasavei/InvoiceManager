@@ -43,13 +43,13 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'UniqueReference',
             headerName: "Unique Reference",
             sortable: true,
-            flex: 1
+            flex: 3
         },
         {
             field: 'OpeningValue',
             headerName: "Opening Value",
             sortable: true,
-            flex: 1,
+            flex: 3,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
                 <FormattedCurrency value={data.row.OpeningValue} currencyCode={data.row.CurrencyCode} />
         },
@@ -57,7 +57,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'RemainingBalance',
             headerName: "Remaining Balance",
             sortable: true,
-            flex: 1,
+            flex: 3,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
                 <FormattedCurrency value={data.row.RemainingBalance} currencyCode={data.row.CurrencyCode} />
         },
@@ -65,7 +65,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'ComputedDeptPercentage',
             headerName: "Dept",
             sortable: true,
-            flex: 1,
+            flex: 2,
             valueGetter: (params: DataGridRowParams<IReceivableDTO>) =>
                 calculateRemainingPercentage(params.row.RemainingBalance, params.row.OpeningValue),
             valueFormatter: (params: DataGridValueFormatterParams<number>) => `${params.value} %`
@@ -74,7 +74,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'IssueDate',
             headerName: "Issue Date",
             sortable: true,
-            flex: 1,
+            flex: 4,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
                 formatISODate(data.row.IssueDate.toString())
         },
@@ -82,7 +82,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'DueDate',
             headerName: "Due Date",
             sortable: true,
-            flex: 1,
+            flex: 4,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
                 formatISODate(data.row.IssueDate.toString())
         },
@@ -90,7 +90,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
             field: 'ClosedDate',
             headerName: "Closed Date",
             sortable: true,
-            flex: 1,
+            flex: 4,
             renderCell: (data: DataGridRowParams<IReceivableDTO>) =>
                 formatISODate(data.row.IssueDate.toString())
         },

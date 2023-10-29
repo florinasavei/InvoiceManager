@@ -3,6 +3,7 @@
   color: var(--foreground-color);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
   overflow-y: auto;
   &__Header{

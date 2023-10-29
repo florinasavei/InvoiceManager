@@ -5,7 +5,7 @@
 }
 
 .DataGrid {
-  border: 0;
+  // border: 0;
   color: var(--foreground-color);
   & :global {
     .MuiTablePagination-root {
@@ -13,6 +13,9 @@
     }
     .MuiSvgIcon-root{
       color: var(--foreground-color);
+    }
+    .MuiDataGrid-cell, .MuiDataGrid-columnHeader{
+      border: 1px solid var(--border-color);
     }
   }
 }
