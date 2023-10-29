@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ReceivablesGrid } from './ReceivablesGrid';
 
 const mockReceivableDTO = {
@@ -35,7 +35,15 @@ jest.mock('@invoice-manager/data-grid', () => ({
 jest.mock('@invoice-manager/models', () => ({
 }));
 
+test('Checked component matches snapshot', () => {
+    const receivables = [mockReceivableDTO];
+
+    const { asFragment } = render(<ReceivablesGrid receivables={receivables} />);
+    expect(asFragment()).toMatchSnapshot();
+});
+
 describe('ReceivablesGrid', () => {
+
     it('renders without errors', () => {
         const receivables = [mockReceivableDTO];
 
@@ -43,12 +51,13 @@ describe('ReceivablesGrid', () => {
 
         expect(container).toBeInTheDocument();
     });
+
+    it('renders "No Data" when no receivables provided', () => {
+        render(<ReceivablesGrid receivables={undefined} />);
+        const noDataElement = screen.getByText('No Data');
+        expect(noDataElement).toBeInTheDocument();
+    });
+
 });
 
-test('Checked component matches snapshot', () => {
-    const receivables = [mockReceivableDTO];
 
-    const { asFragment } = render(<ReceivablesGrid receivables={receivables} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-  

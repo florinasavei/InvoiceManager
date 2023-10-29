@@ -139,16 +139,21 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
 
     return (
         <div>
-            <WidthToggler isExpanded={!isSmallView} toggleExpand={(expanded) => { setIsSmallView(!expanded) }} />
-            {receivables &&
-                <MaterialDataGrid
-                    columns={columns}
-                    rows={receivables}
-                    rowIdField='Id'
-                    getRowStyle={getRowStyle}
-                    columnVisibility={visibleColumns}
-                    gridId={`Receivables-${isSmallView ? 'narrow' : 'wide'}`}
-                />}
+            {receivables == undefined || !(receivables.length > 0) ?
+                <>No Data</>
+                :
+                <>
+                    <WidthToggler isExpanded={!isSmallView} toggleExpand={(expanded) => { setIsSmallView(!expanded) }} />
+                    <MaterialDataGrid
+                        columns={columns}
+                        rows={receivables}
+                        rowIdField='Id'
+                        getRowStyle={getRowStyle}
+                        columnVisibility={visibleColumns}
+                        gridId={`Receivables-${isSmallView ? 'narrow' : 'wide'}`}
+                    />
+                </>
+            }
         </div>
     )
 }
