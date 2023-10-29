@@ -50,7 +50,7 @@ jobs:
           git config --global user.name "Florin Asavei"
           git checkout -b prod
           git reset --hard
-          git cherry-pick qa --continue -Xtheirs --allow-empty
+          git cherry-pick qa -Xtheirs --allow-empty
           git push -f origin prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
