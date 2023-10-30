@@ -47,7 +47,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # TODO: add playwright tests on QA env
+      - name: Run unit tests
+        run: yarn run test:e2e-qa
 
       - name: Deploy invoiceViewer to PROD
         run: |

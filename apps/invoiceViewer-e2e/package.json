@@ -1,0 +1,21 @@
+{
+  "name": "@invoice-manager/e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "8.2.0",
+    "@playwright/test": "1.39.0",
+    "axios": "1.6.0",
+    "cross-env": "^7.0.3",
+    "lariat": "2.0.1",
+    "playwright": "1.39.0"
+  },
+  "scripts": {
+    "test:e2e-qa": "yarn add playwright@1.39.0 -D && yarn run playwright install --with-deps chromium && cross-env E2E_APP_HOST=https://qa-invoice-manager-florin-asavei.netlify.app yarn run playwright test --project=chromium --headed",
+    "test:e2e-local": "cross-env E2E_APP_HOST=https://localhost:5151 yarn run playwright test --project=chromium --headed"
+  }
+}
