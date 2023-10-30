@@ -2,6 +2,7 @@
     "javascript.preferences.importModuleSpecifier": "relative",
     "typescript.preferences.importModuleSpecifier": "relative",
     "cSpell.words": [
-        "clsx"
+        "clsx",
+        "testid"
     ]
 }

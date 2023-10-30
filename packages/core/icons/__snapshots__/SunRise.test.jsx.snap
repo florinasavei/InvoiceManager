@@ -4,6 +4,7 @@ exports[`Checked component matches snapshot 1`] = `
 <DocumentFragment>
   <svg
     class="Icon"
+    data-testid="SunRiseIcon"
     fill="currentColor"
     height="2rem"
     stroke="currentColor"

@@ -138,7 +138,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
     }
 
     return (
-        <div>
+        <div test-dataid="ReceivablesGrid">
             {receivables == undefined || !(receivables.length > 0) ?
                 <>No Data</>
                 :

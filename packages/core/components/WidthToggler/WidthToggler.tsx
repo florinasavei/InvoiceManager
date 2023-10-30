@@ -8,7 +8,7 @@ interface IWidthTogglerProps {
 
 export const WidthToggler = ({ isExpanded, toggleExpand }: IWidthTogglerProps): React.ReactElement => {
     return (
-        <>
+        <div test-dataid="WidthToggler">
             {isExpanded ?
                 <Button
                     type="ghost"
@@ -26,6 +26,6 @@ export const WidthToggler = ({ isExpanded, toggleExpand }: IWidthTogglerProps): 
                     <Expand />
                 </Button>
             }
-        </ >
+        </ div>
     )
 }

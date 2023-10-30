@@ -27,7 +27,7 @@ export const App = (): React.ReactElement => {
 
   return (
     <BrowserRouter>
-      <div className={`${style.App} ${theme}-theme`}>
+      <div className={`${style.App} ${theme}-theme`} data-testid="AppRoot">
         <div className={style.App__Header}>
           <h1>Invoice Manager</h1>
           <ThemeSwitcher theme={theme} setTheme={setTheme} />

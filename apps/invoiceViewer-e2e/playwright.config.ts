@@ -26,7 +26,7 @@ const config: PlaywrightTestConfig = {
         ...devices["Desktop Chrome"],
         launchOptions: {
           args: ["--enable-webgl", "--use-gl=egl"],
-          // slowMo: 1500 // for debug purposes, slow down each step execution by 500 milliseconds,
+          slowMo: 1500 // for debug purposes, slow down each step execution by 500 milliseconds,
         },
         contextOptions: {
           ignoreHTTPSErrors: true,

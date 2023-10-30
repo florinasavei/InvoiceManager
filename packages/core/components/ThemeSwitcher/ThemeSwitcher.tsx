@@ -9,7 +9,7 @@ interface IThemeSwitcherProps {
 
 export const ThemeSwitcher = ({ theme, setTheme }: IThemeSwitcherProps): React.ReactElement => {
     return (
-        <div>
+        <div data-testid="ThemeSwitcher">
             {theme === "dark" &&
                 <Button
                     type="ghost"

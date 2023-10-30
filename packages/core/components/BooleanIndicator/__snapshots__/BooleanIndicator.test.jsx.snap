@@ -5,6 +5,7 @@ exports[`BooleanIndicator BooleanIndicator false component matches snapshot 1`] 
   <svg
     class="Icon"
     color="green"
+    data-testid="CheckedIcon"
     fill="none"
     height="2rem"
     stroke="currentColor"
@@ -32,6 +33,7 @@ exports[`BooleanIndicator BooleanIndicator true component matches snapshot 1`] =
   <svg
     class="Icon"
     color="green"
+    data-testid="CheckedIcon"
     fill="none"
     height="2rem"
     stroke="currentColor"

@@ -3,6 +3,10 @@ import styles from './style.module.scss'
 
 export const Expand = () => {
     return (
-        <MdWidthWide size="2rem" className={styles.Icon}/>
+        <MdWidthWide
+            size="2rem"
+            className={styles.Icon}
+            data-testid="ExpandIcon"
+        />
     )
 }

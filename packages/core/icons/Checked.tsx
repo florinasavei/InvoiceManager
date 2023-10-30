@@ -10,6 +10,7 @@ export const Checked = ({ title }: ICheckedProps) => {
             className={styles.Icon}
             color="green"
             title={title}
+            data-testid="CheckedIcon"
         />
     )
 }

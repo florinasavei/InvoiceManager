@@ -2,6 +2,8 @@
 
 exports[`Checked component matches snapshot 1`] = `
 <DocumentFragment>
-  <div />
+  <div
+    test-dataid="ReceivablesGrid"
+  />
 </DocumentFragment>
 `;

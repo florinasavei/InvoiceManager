@@ -11,6 +11,7 @@ export const Cross = ({ title }: ICrossProps) => {
             className={styles.Icon}
             color="red"
             title={title}
+            data-testid="CrossIcon"
         />
     )
 }

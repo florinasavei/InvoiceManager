@@ -3,6 +3,10 @@ import styles from './style.module.scss'
 
 export const Collapse = () => {
     return (
-        <MdWidthNormal size="2rem" className={styles.Icon}/>
+        <MdWidthNormal
+            size="2rem"
+            className={styles.Icon}
+            data-testid="CollapseIcon"
+        />
     )
 }
