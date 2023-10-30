@@ -15,7 +15,6 @@ const mockReceivableDTO = {
     CurrencyCode: 'USD',
 };
 
-// Mock the useWindowSize hook
 jest.mock('@invoice-manager/core', () => ({
     useWindowSize: jest.fn(() => [1200]), // Mock the width as 1200 by default
     WidthToggler: ({ isExpanded, toggleExpand }) => <></>

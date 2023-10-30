@@ -2,10 +2,8 @@ import {
   DataGrid, GridColDef, GridRowParams,
 } from '@mui/x-data-grid'
 import { StyledEngineProvider } from '@mui/material'
-
-import styles from './style.module.scss'
 import { DataGridVisibleColumns } from './helpers'
-
+import styles from './style.module.scss'
 
 interface IMaterialDataGridProps {
   columns: GridColDef[]

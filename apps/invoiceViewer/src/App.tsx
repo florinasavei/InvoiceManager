@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ThemeOptions } from '@invoice-manager/models';
 import { ThemeSwitcher } from '@invoice-manager/core';
-
-import style from './style.module.scss'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ReceivablesPage } from './pages/ReceivablesPage';
 
+import style from './style.module.scss'
 
 export const App = (): React.ReactElement => {
 

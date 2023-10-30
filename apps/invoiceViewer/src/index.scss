@@ -1,5 +1,6 @@
 @use './styles/_colors.scss';
 
+// allows the colors variables to be available globally
 @include colors.appColors;
 
 :root {

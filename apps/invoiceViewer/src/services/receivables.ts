@@ -1,12 +1,11 @@
-import { IReceivableDTO } from '@invoice-manager/models'
-import httpService from './http'
+import { IReceivableDTO } from "@invoice-manager/models";
+import httpService from "./http";
 
-const getAll = async():Promise<IReceivableDTO[]>=>{
-    //TODO: this should come from an API but it is currently restricted by CORS
-    const response = await httpService.get('./sample-receivables-data.json')
-    return response.data
-}
+const getAll = async (): Promise<IReceivableDTO[]> => {
+  const response = await httpService.get(import.meta.env.VITE_API_RECEIVABLES_URL);
+  return response.data;
+};
 
 export default {
-    getAll,
-}
+  getAll,
+};

@@ -10,6 +10,7 @@ Invoice management system that show a list of receivables (invoices/credit notes
 
 - React 18
 - typeScript
+- Vite
 - SCSS
 - YARN workspaces (for monorepo architecture)
 - Jest
@@ -31,6 +32,16 @@ Invoice management system that show a list of receivables (invoices/credit notes
 ## Development instructions
 
 - recommended editor: VS Code
+
+### Configuring the Environment:
+
+- Set the API routes from the .env file in `apps/invoiceViewer/.env`
+
+## Styling:
+
+- Change the theme by setting the variables from `apps/invoiceViewer/src/styles/_colors.scss` 
+  - browser theme is take into account
+    - the user can also change the theme manually from the top-right button
 
 ### Working with YARN workspaces:
 

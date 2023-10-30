@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Button component matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="Button Button--primary"
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Button component matches snapshot 2`] = `
+<DocumentFragment>
+  <button
+    class="Button Button--secondary"
+  >
+    Submit
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Button component matches snapshot 3`] = `
+<DocumentFragment>
+  <button
+    class="Button Button--ghost"
+  >
+    Cancel
+  </button>
+</DocumentFragment>
+`;

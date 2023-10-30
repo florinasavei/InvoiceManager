@@ -1,7 +1,6 @@
 import { clsx } from 'clsx';
 import styles from './style.module.scss'
 
-
 interface IButtonProps {
     type: "ghost" | "primary" | "secondary";
     onClick?: () => void;
@@ -13,7 +12,7 @@ export const Button = ({ type, onClick, children, title }: IButtonProps): React.
 
     return (
         <button
-            className={clsx(styles.Button ,styles[`Button--${type}`])}
+            className={clsx(styles.Button, styles[`Button--${type}`])}
             onClick={onClick}
             title={title}
         >
