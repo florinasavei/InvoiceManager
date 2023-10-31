@@ -15,6 +15,7 @@ import {
     formatISODate,
     useWindowSize
 } from "@invoice-manager/core"
+import { ReceivablesGridLegend } from "./ReceivablesGridLegend"
 
 import styles from './style.module.scss'
 
@@ -152,6 +153,7 @@ export const ReceivablesGrid = ({ receivables }: IReceivablesGridProps): React.R
                         columnVisibility={visibleColumns}
                         gridId={`Receivables-${isSmallView ? 'narrow' : 'wide'}`}
                     />
+                    <ReceivablesGridLegend />
                 </>
             }
         </div>

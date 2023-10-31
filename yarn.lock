@@ -2116,6 +2116,7 @@ __metadata:
     "@types/react": "npm:^18.2.28"
     "@types/react-dom": "npm:^18.2.13"
     babel-preset-env: "npm:^1.7.0"
+    clsx: "npm:^2.0.0"
     identity-obj-proxy: "npm:^3.0.0"
     jest: "npm:^29.7.0"
     jest-dom: "npm:^4.0.0"
