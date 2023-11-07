@@ -2,7 +2,7 @@
   "name": "@invoice-manager/invoice-viewer",
   "packageManager": "yarn@4.0.0-rc.42",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
     "dev": "yarn dlx kill-port 5151 && vite --port 5151",
     "build": "tsc && vite build",
