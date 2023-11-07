@@ -20,24 +20,21 @@ jobs:
 
       - name: Use Node.js & YARN with Volta
         run: volta install node@20.9.0 yarn@4.0.0 
-      
-      - name: Move to project folder
-        run: cd FE/ReactVite
 
       - name: Install dependencies
-        run: yarn install --silent 2>&1
+        run: cd FE/ReactVite && yarn install --silent 2>&1
 
       - name: Build the app
-        run: yarn run build:invoiceViewer
+        run: cd FE/ReactVite && yarn run build:invoiceViewer
 
       - name: Run unit tests
-        run: yarn run test:unit
+        run: cd FE/ReactVite && yarn run test:unit
         
       - name: Copy files from apps/invoiceViewer/dist to current directory
-        run: cp -r apps/invoiceViewer/dist/* ./
+        run: cd FE/ReactVite && cp -r apps/invoiceViewer/dist/* ./../..
 
       - name: Copy files from apps/invoiceViewer/public to current directory
-        run: cp -r apps/invoiceViewer/public/* ./ 
+        run: cd FE/ReactVite && cp -r apps/invoiceViewer/public/* ./../..
 
       - name: Deploy invoiceViewer to QA
         run: |
