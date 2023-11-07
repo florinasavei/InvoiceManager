@@ -37,7 +37,14 @@ jobs:
           git checkout -b ghp-qa-react-vite
           cp ./FE/ReactVite/apps/invoiceViewer/dist/* . -r
           cp ./FE/ReactVite/apps/invoiceViewer/public . -r
-          git add .
+          cp ./FE/ReactVite/apps/invoiceViewer/CNAME .
+          git add ./CNAME -f
+          git add ./public -f
+          git add ./assets -f
+          git add ./404.html -f
+          git add ./favicon.svg -f
+          git add ./index.html -f
+          git add ./sample-receivables-data.json -f
           git commit -m "Deploy to qa"
           git push -f origin ghp-qa-react-vite
         env:
