@@ -35,8 +35,9 @@ jobs:
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
           git checkout -b ghp-qa-react-vite
-          git add ./FE/ReactVite/apps/invoiceViewer/dist -f
-          git add ./FE/ReactVite/apps/invoiceViewer/public -f
+          cp ./FE/ReactVite/apps/invoiceViewer/dist .
+          cp ./FE/ReactVite/apps/invoiceViewer/public .
+          git add .
           git commit -m "Deploy to qa"
           git push -f origin ghp-qa-react-vite
         env:
