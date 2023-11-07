@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to GitHub Pages
 
 on:
   push:
@@ -19,7 +19,10 @@ jobs:
           yarn-version: 4.0.0
 
       - name: Use Node.js & YARN with Volta
-        run: volta install node@20.9.0 yarn@4.0.0   
+        run: volta install node@20.9.0 yarn@4.0.0 
+      
+      - name: Move to project folder
+        run: cd FE/ReactVite
 
       - name: Install dependencies
         run: yarn install --silent 2>&1
