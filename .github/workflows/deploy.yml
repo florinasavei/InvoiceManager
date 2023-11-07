@@ -30,20 +30,15 @@ jobs:
       - name: Run unit tests
         run: cd FE/ReactVite && yarn run test:unit
         
-      - name: Copy files from apps/invoiceViewer/dist to current directory
-        run: cd FE/ReactVite && cp -r apps/invoiceViewer/dist/* ./../..
-
-      - name: Copy files from apps/invoiceViewer/public to current directory
-        run: cd FE/ReactVite && cp -r apps/invoiceViewer/public/* ./../..
-
       - name: Deploy invoiceViewer to QA
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
-          git checkout -b qa
-          git add ./
+          git checkout -b ghp-qa-react-vite
+          git add ./FE/ReactVite/apps/invoiceViewer/dist
+          git add ./FE/ReactVite/apps/invoiceViewer/public
           git commit -m "Deploy to qa"
-          git push -f origin qa
+          git push -f origin ghp-qa-react-vite
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -54,10 +49,10 @@ jobs:
         run: |
           git config --global user.email "asaveiflorin@gmail.com"
           git config --global user.name "Florin Asavei"
-          git checkout -b prod
+          git checkout -b ghp-prod-react-vite
           git reset --hard
-          git rebase -Xtheirs qa
-          git push -f origin prod
+          git rebase -Xtheirs ghp-qa-react-vite
+          git push -f origin ghp-prod-react-vite
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
