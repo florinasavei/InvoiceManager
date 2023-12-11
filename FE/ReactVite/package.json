@@ -1,12 +1,12 @@
 {
   "name": "invoice-manager",
-  "packageManager": "yarn@4.0.0-rc.53",
+  "packageManager": "yarn@4.0.2",
   "engines": {
-    "node": "20.9.0"
+    "node": "20.10.0"
   },
   "workspaces": [
-    "packages/*",
-    "apps/*"
+    "apps/*",
+    "modules/*"
   ],
   "scripts": {
     "clean:node_modules": "yarn cache clean && yarn dlx del-cli \"**/node_modules\" && echo done ",
@@ -15,9 +15,8 @@
     "test:e2e-qa": "yarn workspaces foreach -A run test:test:e2e-qa"
   },
   "volta": {
-    "node": "20.9.0",
-    "yarn": "4.0.0",
-    "npm": "10.2.1"
+    "node": "20.10.0",
+    "yarn": "4.0.2"
   },
   "devDependencies": {
     "@types/kill-port": "^2",

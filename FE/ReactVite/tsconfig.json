@@ -22,7 +22,7 @@
   ],
   "include": [
     "apps/**/*",
-    "packages/**/*",
+    "modules/**/*",
     "./@types/custom.d.ts"
   ]
 }

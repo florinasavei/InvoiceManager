@@ -22,13 +22,13 @@ Invoice management system that show a list of receivables (invoices/credit notes
 
 ## Development setup
 
-- core dependencies: `node@20.9.0` `yarn@4.0.0`
+- core dependencies: `node@20.10.0` `yarn@4.0.2`
 
 - the app will run on `https://localhost:5151/` with a self-signed SSL certificate
 
 - this project also supports [Volta](https://docs.volta.sh/guide/getting-started)
     - install volta
-    - run `volta install node@20.9.0 yarn@4.0.0`
+    - run `volta install node@20.10.0 yarn@4.0.2`
        - when using Volta, it is remanded to run VS Code as admin
 
 ## Development instructions
